@@ -1,49 +1,40 @@
 # api-language-detect 🚀
 
-
 ## Overview
 
-**fast-langdetect** provides ultra-fast and highly accurate language detection based on FastText, a library developed by
-Facebook. This package is 80x faster than traditional methods and offers 95% accuracy.
+**api-language-detect** provides ultra-fast and highly accurate language detection based on FastText, a library developed by Facebook. This package is 80x faster than traditional methods and offers 95% accuracy.
 
 It supports Python versions 3.9 to 3.12.
 
-This project builds upon [zafercavdar/fasttext-langdetect](https://github.com/zafercavdar/fasttext-langdetect#benchmark)
-with enhancements in packaging.
-
-For more information on the underlying FastText model, refer to the official
-documentation: [FastText Language Identification](https://fasttext.cc/docs/en/language-identification.html).
-
-> [!NOTE]
+> [!NOTE]  
 > This library requires over 200MB of memory to use in low memory mode.
 
 ## Installation 💻
 
-To install fast-langdetect, you can use either `pip` or `pdm`:
+To install api-language-detect, you can use either `pip` or `pdm`:
 
 ### Using pip
 
 ```bash
-pip install fast-langdetect
+pip install api-language-detect
 ```
 
 ### Using pdm
 
 ```bash
-pdm add fast-langdetect
+pdm add api-language-detect
 ```
 
 ## Usage 🖥️
 
-For optimal performance and accuracy in language detection, use `detect(text, low_memory=False)` to load the larger
-model.
+For optimal performance and accuracy in language detection, use `detect(text, low_memory=False)` to load the larger model.
 
 > The model will be downloaded to the `/tmp/fasttext-langdetect` directory upon first use.
 
 ### Native API (Recommended)
 
 ```python
-from fast_langdetect import detect, detect_multilingual
+from api_language_detect import detect, detect_multilingual
 
 # Single language detection
 print(detect("Hello, world!"))
@@ -63,7 +54,7 @@ print(detect_multilingual("Hello, world!你好世界!Привет, мир!"))
 ### Convenient `detect_language` Function
 
 ```python
-from fast_langdetect import detect_language
+from api_language_detect import detect_language
 
 # Single language detection
 print(detect_language("Hello, world!"))
@@ -75,13 +66,3 @@ print(detect_language("Привет, мир!"))
 print(detect_language("你好，世界！"))
 # Output: ZH
 ```
-
-### Splitting Text by Language 🌐
-
-For text splitting based on language, please refer to the [split-lang](https://github.com/DoodleBears/split-lang)
-repository.
-
-## Accuracy 🎯
-
-For detailed benchmark results, refer
-to [zafercavdar/fasttext-langdetect#benchmark](https://github.com/zafercavdar/fasttext-langdetect#benchmark).
